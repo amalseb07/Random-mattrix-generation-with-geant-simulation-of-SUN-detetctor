@@ -1,0 +1,28 @@
+# Sets some default verbose
+/run/verbose 0
+/tracking/verbose 0
+/event/verbose 0
+
+
+
+# create empty scene
+/vis/scene/create
+
+/vis/open OGLIX
+
+/control/verbose 2
+
+# draw scene
+/vis/viewer/set/viewpointThetaPhi 90 0 deg
+/vis/viewer/panTo 0.0 0.0
+/vis/viewer/zoom 1.0
+/vis/viewer/set/viewpointThetaPhi 45 45 deg
+/vis/viewer/flush
+
+/tracking/storeTrajectory 1
+/vis/scene/add/trajectories
+
+# (if you prefer refreshing each event, comment out next line)
+/vis/scene/endOfEventAction accumulate
+
+exit
